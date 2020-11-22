@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Radar } from 'react-chartjs-2'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor (props) {
+    super (props);
+    this.state = {
+      data: {
+        labels: ['貯める力', '稼ぐ力', '増やす力', '使う力', '守る力'],
+        datasets: [{
+            label: '5つの力',
+            data: [12, 19, 3, 5, 2],
+            backgroundColor: [
+                'rgba(25, 199, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(25, 199, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false,
+        legend: false
+      }
+    };
+  }
+
+  render () {
+    return (
+      <div>
+        <h1>5つの力</h1>
+        <Radar data={this.state.data} options={this.state.options} />
+      </div>
+    );
+  }
 }
+
 
 export default App;
