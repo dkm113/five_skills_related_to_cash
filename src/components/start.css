@@ -1,0 +1,11 @@
+.startVisual {
+    border-radius: 5px;
+    border: 15px solid yellow;
+    background-color: white;
+}
+
+.startBtn {
+    border-radius: 50px;
+    background-color: wheat;
+    font-size: 36px;
+}
