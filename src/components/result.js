@@ -26,8 +26,10 @@ class ResultApp extends Component {
         }]
       },
       options: {
-        responsive: false,
-        legend: false
+        responsive: true,
+        legend: false,
+        responsiveAnimationDuration: 1000,
+        
       }
     };
   }

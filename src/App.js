@@ -1,41 +1,17 @@
 import React, { Component } from 'react';
-import { Radar } from 'react-chartjs-2'
-
+import { Route } from 'react-router-dom';
+import StartApp from './components/start';
+import FormApp from './components/form';
+import ResultApp from './components/result';
 
 class App extends Component {
-  constructor (props) {
-    super (props);
-    this.state = {
-      data: {
-        labels: ['貯める力', '稼ぐ力', '増やす力', '使う力', '守る力'],
-        datasets: [{
-            label: '5つの力',
-            data: [12, 19, 3, 5, 2],
-            backgroundColor: [
-                'rgba(25, 199, 132, 0.2)'
-            ],
-            borderColor: [
-                'rgba(25, 199, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: false,
-        legend: false
-      }
-    };
-  }
-
   render () {
     return (
       <div>
-        <h1>5つの力</h1>
-        <Radar data={this.state.data} options={this.state.options} />
+        <h1>人生を豊かにするお金にまつわる5つの力 診断テスト！</h1>
+        <Route path="/" component={StartApp} exact={true} />
+        <Route path="/form" component={FormApp} />
+        <Route path="/result" component={ResultApp} />
       </div>
     );
   }
