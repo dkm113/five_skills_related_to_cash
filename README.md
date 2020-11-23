@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# 人生を豊かにするお金にまつわる５つの力 診断 - プロトタイプ -
+
+5つの力を診断できるWEBアプリです。
+
+<img src="./img/result.png" width="50%">
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
