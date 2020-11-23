@@ -31,6 +31,12 @@ class ResultApp extends Component {
                 responsive: true,
                 legend: false,
                 responsiveAnimationDuration: 1000,
+                scale: {
+                    ticks: {
+                        suggestedMin: 0,
+                        suggestedMax: 6
+                    }
+                }
             
             }
         };
@@ -40,9 +46,20 @@ class ResultApp extends Component {
         this.props.history.push('/');
     }
 
+    updateParam(){
+        const data = JSON.parse(localStorage.getItem('data')) || [];
+        this.state.data.datasets[0].data[0] = data.power_save;
+        this.state.data.datasets[0].data[1] = data.power_earn;
+        this.state.data.datasets[0].data[2] = data.power_grow;
+        this.state.data.datasets[0].data[3] = data.power_use;
+        this.state.data.datasets[0].data[4] = data.power_protect;
+        
+    }
+
     render () {
         return (
             <div>
+                { this.updateParam() }
                 <div className="container">
                     <div className="resultVisual">
                         <div className="flexArea">

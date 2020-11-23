@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import Radio from '@material-ui/core/Radio';
 import '../index.css';
 import './form.css';
+import Result from './result';
 
 class FormApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            data : {
             /* -- 5つの力 -- */
-            power_save: 0,
-            power_earn: 0,
-            power_grow: 0,
-            power_use: 0,
-            power_protect:0,
+                power_save: 0,
+                power_earn: 0,
+                power_grow: 0,
+                power_use: 0,
+                power_protect:0
+            },
             /* -- フォーム選択 -- */
             /* Q1: */
             q1: "2",
@@ -24,7 +27,18 @@ class FormApp extends Component {
     }
 
     sendForm(){
-        this.props.history.push('/result');
+        this.updateParam();
+        this.props.history.push({pathname:'/result'});
+    }
+
+    updateParam(){
+        this.state.data.power_save = Number(this.state.q1) + Number(this.state.q2);
+        this.state.data.power_earn = Number(this.state.q3);
+        this.state.data.power_grow = 0;
+        this.state.data.power_use = Number(this.state.q5);
+        this.state.data.power_protect = Number(this.state.q4);
+
+        localStorage.setItem('data',JSON.stringify(this.state.data));
     }
 
     render() {
