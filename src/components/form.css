@@ -21,6 +21,11 @@
     text-shadow: 1px 1px 3px black;
 }
 
+.formBtn:hover {
+    opacity: 0.6;
+}
+
+
 dl {
     width: 70%;
     margin: 0px auto;
