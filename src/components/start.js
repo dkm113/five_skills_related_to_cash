@@ -26,7 +26,7 @@ class StartApp extends Component {
                         </div>
                         <img width="600px" src="https://cdn.shortpixel.ai/client/to_avif,q_glossy,ret_img,w_960/https://liberaluni.com/wp-content/uploads/2018/04/191003itutunotikara1.png" />
                         <br />
-                        <button className="startBtn" onClick={this.startForm.bind(this)}>5つの力を診断!<br />- さあ、あなたの5つの力は？ -</button>
+                        <button className="startBtn" onClick={this.startForm.bind(this)}>5つの力を診断!<br /><small>- さあ、あなたの5つの力は？ -</small></button>
                     </div>
                 </div>
             </div>
